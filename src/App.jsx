@@ -397,16 +397,23 @@ function App() {
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
               <div className="flex items-center gap-8">
-                <h1 className="text-center text-5xl font-black leading-tight text-emerald-500 drop-shadow-sm">
-                  카치아<br />
-                  팀원뽑기!
-                </h1>
-                <img
-                  src="/images/title-sticker.png"
-                  alt="제목 스티커"
-                  className="hidden h-52 w-52 object-contain sm:block"
-                />
-              </div>
+  <div className="flex flex-col items-center">
+    <h1 className="text-center text-5xl font-black leading-tight text-emerald-500 drop-shadow-sm">
+      카치아<br />
+      팀원뽑기!
+    </h1>
+
+    <p className="mt-2 text-center text-sm font-semibold text-slate-500">
+      제작 : 페드리건
+    </p>
+  </div>
+
+  <img
+    src="/images/title-sticker.png"
+    alt="제목 스티커"
+    className="hidden h-52 w-52 object-contain sm:block"
+  />
+</div>
               <p className="text-sm text-slate-500">참가자 입력 → 팀장 뽑기 → 드래그 팀 구성 → 결과 확인</p>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -579,7 +586,7 @@ function App() {
                     </div>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     {teams.map((team) => (
                       <div
                         key={team.id}
@@ -594,7 +601,7 @@ function App() {
                           </div>
                           <Button variant="outline" onClick={() => cancelLeader(team.id)}>팀 취소</Button>
                         </div>
-                        <div className="min-h-20 rounded-2xl border-2 border-dashed border-slate-200 bg-slate-50 p-3">
+                        <div className="min-h-16 rounded-2xl border-2 border-dashed border-slate-200 bg-slate-50 p-3">
                           <div className="flex flex-wrap gap-2">
                             {team.members.map((member) => (
                               <span
